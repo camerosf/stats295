@@ -69,3 +69,5 @@ df['purchased_last_year_women'] = ((df['womens'] == 1)).astype(int)
 percent_by_segment = df.groupby('segment')['purchased_last_year_women'].mean() * 100
 print("Purchased a women's merchandise last year")
 print(percent_by_segment)
+
+print("testing")
