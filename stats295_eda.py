@@ -71,3 +71,35 @@ print("Purchased a women's merchandise last year")
 print(percent_by_segment)
 
 print("testing")
+
+
+# Testing ECONML Pacakge and git stuff
+mapping = {
+    "Mens E-Mail": 1,
+    "Womens E-Mail": 2,
+    "No E-Mail": 0
+}
+df["T"] = df["segment"].map(mapping)
+
+# --- Outcome variable (choose spend or conversion) ---
+Y = df["spend"].values
+T = df["T"].values
+
+# --- Feature matrix ---
+feature_cols = ["recency", "history", "mens", "womens", "newbie", "zip_code", "channel"]
+X = pd.get_dummies(df[feature_cols], drop_first=True).values
+
+# ---- DR Learner ----
+from econml.dr import DRLearner
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LogisticRegression
+
+dr = DRLearner(
+    model_regression=RandomForestRegressor(),
+    model_propensity=LogisticRegression()
+)
+
+dr.fit(Y, T, X=X)
+ATE = dr.ate(X=X)
+print("===== ECONML RESULTS =====")
+print(f"ATE (Doubly Robust): {ATE}")
