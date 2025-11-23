@@ -1,18 +1,9 @@
 import pandas as pd
-print("Test - Nathan")
 df = pd.read_csv("EmailAnalytics.csv")
-
-#df.info()
-#df.describe(include="all")
-
-#categorical_cols = ["history_segment", "zip_code", "channel", "segment"]
-#for col in categorical_cols:
-#    df[col] = df[col].astype("category")
 
 missingness_count = df.isnull().sum()
 
 email_type = df[['mens', 'womens']].sum()
-
 
 visit_average = df['visit'].mean()
 conversion_average = df['conversion'].mean()
@@ -30,15 +21,12 @@ print(f"Conversion Average: {conversion_average}")
 
 print(f"spend distribution: {spend_distribution}")
 
-visit_rates = df.groupby('womens')['visit'].mean()
-print("No womens email visit rate:", visit_rates[0])
-print("Womens email visit rate:", visit_rates[1])
+#visit_rates = df.groupby('womens')['visit'].mean()
+#print("No womens email visit rate:", visit_rates[0])
+#print("Womens email visit rate:", visit_rates[1])
 
 print(f"Conversion rate men: {df.groupby('mens')['conversion'].mean()}")
-
 print(f"Conversion rate women: {df.groupby('womens')['conversion'].mean()}")
-
-print(f"purchase mediums: {df["channel"].unique()}")
 
 #percentage of sample
 print("Percentage of sample")
@@ -59,15 +47,35 @@ print(df.groupby('segment')['history'].mean())
 print(df.groupby('segment')['history'].std())
 
 #Purchased a men's merchandise last year?
-df['purchased_last_year_men'] = ((df['mens'] == 1)).astype(int)
-percent_by_segment = df.groupby('segment')['purchased_last_year_men'].mean() * 100
+percent_by_segment = df.groupby('segment')['mens'].mean() * 100
 print("Purchased a men's merchandise last year")
 print(percent_by_segment)
 
 #Purchased a women's merchandise last year?
-df['purchased_last_year_women'] = ((df['womens'] == 1)).astype(int)
-percent_by_segment = df.groupby('segment')['purchased_last_year_women'].mean() * 100
+percent_by_segment = df.groupby('segment')['womens'].mean() * 100
 print("Purchased a women's merchandise last year")
 print(percent_by_segment)
 
-print("testing")
+#regional area
+print("Regional Area")
+print(df.groupby('segment')['zip_code'].value_counts(normalize=True) * 100)
+
+#new customer
+print("New Customer")
+print(df.groupby('segment')['newbie'].value_counts(normalize=True) * 100)
+
+#site to purchase goods
+print("Medium purchasing goods")
+print(df.groupby('segment')['channel'].value_counts(normalize=True) * 100)
+
+#visited site at least once following email campaign
+print("visited site")
+print(df.groupby('segment')['visit'].value_counts(normalize=True)*100)
+
+#bought merchandise off site at least once following email campaign
+print("purchase on site")
+print(df.groupby('segment')['conversion'].value_counts(normalize=True)*100)
+
+#average money spent given bought item
+bought_item = df[df['conversion'] == 1]
+print(bought_item.groupby('segment')['spend'].mean())
