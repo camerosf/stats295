@@ -79,3 +79,35 @@ print(df.groupby('segment')['conversion'].value_counts(normalize=True)*100)
 #average money spent given bought item
 bought_item = df[df['conversion'] == 1]
 print(bought_item.groupby('segment')['spend'].mean())
+
+
+# Testing ECONML Pacakge and git stuff
+mapping = {
+    "Mens E-Mail": 1,
+    "Womens E-Mail": 2,
+    "No E-Mail": 0
+}
+df["T"] = df["segment"].map(mapping)
+
+# --- Outcome variable (choose spend or conversion) ---
+Y = df["spend"].values
+T = df["T"].values
+
+# --- Feature matrix ---
+feature_cols = ["recency", "history", "mens", "womens", "newbie", "zip_code", "channel"]
+X = pd.get_dummies(df[feature_cols], drop_first=True).values
+
+# ---- DR Learner ----
+from econml.dr import DRLearner
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LogisticRegression
+
+dr = DRLearner(
+    model_regression=RandomForestRegressor(),
+    model_propensity=LogisticRegression()
+)
+
+dr.fit(Y, T, X=X)
+ATE = dr.ate(X=X)
+print("===== ECONML RESULTS =====")
+print(f"ATE (Doubly Robust): {ATE}")
