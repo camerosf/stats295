@@ -45,6 +45,12 @@ print(df.groupby('channel')['CATE'].mean())
 print(df.groupby('newbie')['CATE'].mean())
 print(df.groupby('zip_code')['CATE'].mean())
 
+#shows by category increased chance of visiting site 
+#Around 5-6% increase for mid range spenders while 7-9% increase for high spenders
+#consistent difference across all channels or web/phone/multichannel
+#newbie status aka new customer or not essentially no difference
+#urban/suburban customers respond more than rural but barely more)
+
 import matplotlib.pyplot as plt
 
 plt.hist(df['CATE'], bins=40)
@@ -52,3 +58,5 @@ plt.xlabel("Estimated CATE")
 plt.ylabel("Number of Customers")
 plt.title("Distribution of Treatment Effects")
 plt.show()
+
+#graphs the overall difference between email and no email on going to site
