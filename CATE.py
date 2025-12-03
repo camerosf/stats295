@@ -59,7 +59,7 @@ df["CATE_womens_vs_control"] = forest_womens.effect(X)
 
 # ============================
 # 4. CAUSAL FOREST: MENS vs WOMENS (NO CONTROL)
-# ============================
+# ===========================
 
 T2 = df_mw["T_mvw"].values
 
