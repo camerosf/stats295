@@ -51,6 +51,20 @@ ATE_mens_vs_women = np.mean(Y1_hat - Y2_hat)
 print("ATE: Mens Email vs Womens Email =", ATE_mens_vs_women)
 
 
+df["CATE_mens"] = Y1_hat - Y0_hat
+df["CATE_womens"] = Y2_hat - Y0_hat
+df["CATE_mens_vs_womens"] = Y1_hat - Y2_hat
+
+print(df[["CATE_mens", "CATE_womens", "CATE_mens_vs_womens"]].head())
+
+print("\nCATE SUMMARY STATS")
+print("Mens vs Control:\n", df["CATE_mens"].describe())
+print("\nWomens vs Control:\n", df["CATE_womens"].describe())
+print("\nMens vs Womens:\n", df["CATE_mens_vs_womens"].describe())
+
+
+
+
 #Using the Direct Method (outcome regression), we estimated the causal effect of each email campaign on customer spending.
 #The Mens Email increased average spending by $0.58 relative to the control group, while the Womens Email increased spending by $0.39.
 #The Mens Email outperformed the Womens Email by approximately $0.19 per customer.
