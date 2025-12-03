@@ -55,3 +55,14 @@ print("ATE: Mens Email vs Womens Email =", ATE_mens_vs_women)
 #The Mens Email increased average spending by $0.58 relative to the control group, while the Womens Email increased spending by $0.39.
 #The Mens Email outperformed the Womens Email by approximately $0.19 per customer.
 #These results suggest that the Mens Email is the most effective campaign overall, generating the highest incremental revenue per customer.
+
+
+df["CATE_mens"] = Y1_hat - Y0_hat
+df["CATE_womens"] = Y2_hat - Y0_hat
+df["CATE_mens_vs_womens"] = Y1_hat - Y2_hat
+
+print(df[["CATE_mens", "CATE_womens", "CATE_mens_vs_womens"]].head())
+# Estimate CATEs for each individual
+# The CATE_mens column represents the estimated individual-level treatment effect of the Mens Email compared to no email.
+# The CATE_womens column represents the estimated individual-level treatment effect of the Womens Email compared to no email.
+# The CATE_mens_vs_womens column represents the estimated
