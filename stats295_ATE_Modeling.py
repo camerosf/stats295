@@ -2,9 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
 
-#Direct Method usingg GradientBoostingRegressor can use and learner
+# Load dataset
 df = pd.read_csv("EmailAnalytics.csv")
 
+# map treatment
 mapping = {
     "No E-Mail": 0,
     "Mens E-Mail": 1,
@@ -12,60 +13,56 @@ mapping = {
 }
 df["T"] = df["segment"].map(mapping)
 
-# Outcome variable
+# outcome variable (lowercase in your file)
 Y = df["spend"].values
 
-# Covariates
+# covariates (all lowercase)
 feature_cols = ["recency", "history", "mens", "womens", "newbie", "zip_code", "channel"]
+
+# one-hot encode categorical vars
 X = pd.get_dummies(df[feature_cols], drop_first=True)
 
-# Add treatment to covariates for model fitting
+# add treatment column
 X_with_T = X.copy()
 X_with_T["T"] = df["T"]
 
-# Fit outcome regression model
+# fit model
 model = GradientBoostingRegressor()
 model.fit(X_with_T, Y)
 
-# Copy covariates and set treatment levels for potential outcomes
+# create copies for each treatment scenario
 X0 = X_with_T.copy()
 X1 = X_with_T.copy()
 X2 = X_with_T.copy()
 
-X0["T"] = 0       # No Email
-X1["T"] = 1       # Mens Email
-X2["T"] = 2       # Womens Email
+X0["T"] = 0     # No Email
+X1["T"] = 1     # Mens Email
+X2["T"] = 2     # Womens Email
 
-Y0_hat = model.predict(X0)   # Potential outcome under No Email
-Y1_hat = model.predict(X1)   # Potential outcome under Mens Email
-Y2_hat = model.predict(X2)   # Potential outcome under Womens Email
+Y0_hat = model.predict(X0)
+Y1_hat = model.predict(X1)
+Y2_hat = model.predict(X2)
 
-
+# ATE estimates
 ATE_mens = np.mean(Y1_hat - Y0_hat)
-print("ATE: Mens Email vs Control =", ATE_mens)
-
 ATE_womens = np.mean(Y2_hat - Y0_hat)
-print("ATE: Womens Email vs Control =", ATE_womens)
-
 ATE_mens_vs_women = np.mean(Y1_hat - Y2_hat)
+
+print("ATE: Mens Email vs Control =", ATE_mens)
+print("ATE: Womens Email vs Control =", ATE_womens)
 print("ATE: Mens Email vs Womens Email =", ATE_mens_vs_women)
 
-
+# CATE storage
 df["CATE_mens"] = Y1_hat - Y0_hat
 df["CATE_womens"] = Y2_hat - Y0_hat
 df["CATE_mens_vs_womens"] = Y1_hat - Y2_hat
 
 print(df[["CATE_mens", "CATE_womens", "CATE_mens_vs_womens"]].head())
 
-print("\nCATE SUMMARY STATS")
-print("Mens vs Control:\n", df["CATE_mens"].describe())
-print("\nWomens vs Control:\n", df["CATE_womens"].describe())
-print("\nMens vs Womens:\n", df["CATE_mens_vs_womens"].describe())
+print("Running diff-in-means only...")
 
+ATE_mens_DM = df[df.T==1]["visit"].mean() - df[df.T==0]["visit"].mean()
+ATE_womens_DM = df[df.T==2]["visit"].mean() - df[df.T==0]["visit"].mean()
+ATE_m_vs_w_DM = df[df.T==1]["visit"].mean() - df[df.T==2]["visit"].mean()
 
-
-
-#Using the Direct Method (outcome regression), we estimated the causal effect of each email campaign on customer spending.
-#The Mens Email increased average spending by $0.58 relative to the control group, while the Womens Email increased spending by $0.39.
-#The Mens Email outperformed the Womens Email by approximately $0.19 per customer.
-#These results suggest that the Mens Email is the most effective campaign overall, generating the highest incremental revenue per customer.
+print("Diff Means OK")
