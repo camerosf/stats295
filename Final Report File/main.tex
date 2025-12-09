@@ -62,16 +62,6 @@ Department of Statistics, University of California, Irvine}
 \subsection{Consistency}
 \subsection{Why A/B Tests Identify the ATE}
 
-% ============================================
-% SYNTHETIC GOES BEFORE REAL ANALYSIS
-% ============================================
-\section{Synthetic Dataset Validation}
-\subsection{Synthetic Data Generation}
-To complement our analysis of the real e-commerce A/B test, we generated a synthetic dataset in which the full data-generating process is explicitly controlled. In the real dataset, treatment assignment and potential outcomes are not fully observable, so we cannot assess whether our estimated ATEs and CATEs are accurate or biased. Our synthetic dataset allows us to specify exactly how treatment depends on customer covariates, including the confounders such as recency, purchase history, gender-aligned preferences, and newbie status. It also allows us to insert known causal effects into the outcome model, ensuring that the true treatment effects are known by construction. With this structure, we can evaluate how well different causal inference methods recover the correct treatment effects by directly computing their estimation bias and variance. This provides a controlled validation scenario that mirrors the patterns observed in our real data while giving us the ability to  assess method performance, which is not possible when analyzing the actual experiment alone.
-\subsection{True Treatment Effects}
-\subsection{ATE Estimator Comparison}
-\subsection{Bias and Variance Evaluation}
-\subsection{Interpretation}
 
 % ============================================
 % REAL DATA ANALYSIS
@@ -87,6 +77,18 @@ To complement our analysis of the real e-commerce A/B test, we generated a synth
 \subsection{CATE by Channel}
 \subsection{CATE by Purchase History}
 \subsection{Causal Forest Feature Importance}
+
+% ============================================
+% SYNTHETIC GOES BEFORE REAL ANALYSIS
+% ============================================
+\section{Synthetic Dataset Validation}
+\subsection{Synthetic Data Generation}
+To complement our analysis of the real e-commerce A/B test, we generated a synthetic dataset in which the full data-generating process is explicitly controlled. In the real dataset, treatment assignment and potential outcomes are not fully observable, so we cannot assess whether our estimated ATEs and CATEs are accurate or biased. Our synthetic dataset allows us to specify exactly how treatment depends on customer covariates, including the confounders such as recency, purchase history, gender-aligned preferences, and newbie status. It also allows us to insert known causal effects into the outcome model, ensuring that the true treatment effects are known by construction. With this structure, we can evaluate how well different causal inference methods recover the correct treatment effects by directly computing their estimation bias and variance. This provides a controlled validation scenario that mirrors the patterns observed in our real data while giving us the ability to  assess method performance, which is not possible when analyzing the actual experiment alone.
+\subsection{True Treatment Effects}
+\subsection{ATE Estimator Comparison}
+\subsection{Bias and Variance Evaluation}
+\subsection{Interpretation}
+
 
 \section{Discussion}
 

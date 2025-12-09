@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 02:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 02:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -399,28 +399,33 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
+Overfull \vbox (37.44044pt too high) has occurred while \output is active []
 
-[4] (./main.aux)
+
+
+[4]
+
+[5] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 85F52717E80C1240A824F87C5DE5C057;5424.
+(rerunfilecheck)             Checksum: F15B770B19431A003C5C18DED6469C03;5424.
  ) 
 Here is how much of TeX's memory you used:
- 12067 strings out of 469754
- 187530 string characters out of 5480738
+ 12068 strings out of 469754
+ 187536 string characters out of 5480738
  596993 words of memory out of 5000000
  40269 multiletter control sequences out of 15000+600000
  634688 words of font info for 71 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 75i,6n,79p,1150b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,1150b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (4 pages, 97521 bytes).
+Output written on main.pdf (5 pages, 97757 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 
