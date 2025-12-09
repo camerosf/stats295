@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+% -----------------------
+% Packages
+% -----------------------
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{natbib}
+
+\geometry{margin=1in}
+\setstretch{1.2}
+
+% -----------------------
+% Title Page
+% -----------------------
+\title{A Multi-Arm A/B Testing and Causal Evaluation of Marketing E-Mails with Synthetic Validation and Heterogeneous Treatment Effects}
+\author{Alexander Yu, Cameron Fong, Nathan Gin \\
+Department of Statistics, University of California, Irvine}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% -----------------------
+% Sections
+% -----------------------
+
+\section{Introduction}
+
+\section{Background and Motivation}
+
+\section{Data Description}
+
+\section{Exploratory Data Analysis}
+\subsection{Treatment Assignment}
+\subsection{Outcome Summaries}
+\subsection{Covariate Balance}
+\subsection{Correlation Structure}
+
+\section{Causal Identification}
+\subsection{Unconfoundedness}
+\subsection{Overlap}
+\subsection{SUTVA}
+\subsection{Consistency}
+\subsection{Why A/B Tests Identify the ATE}
+
+% ============================================
+% SYNTHETIC GOES BEFORE REAL ANALYSIS (CORRECT ORDER)
+% ============================================
+\section{Synthetic Dataset Validation}
+\subsection{Synthetic Data Generation}
+\subsection{True Treatment Effects}
+\subsection{ATE Estimator Comparison}
+\subsection{Bias and Variance Evaluation}
+\subsection{Interpretation}
+
+% ============================================
+% REAL DATA ANALYSIS FOLLOWS SYNTHETIC VALIDATION
+% ============================================
+\section{ATE Results on Hillstrom Dataset}
+\subsection{Difference-in-Means}
+\subsection{OLS / IPW Estimates}
+\subsection{DR-Learner Results}
+\subsection{Causal Forest Results}
+
+\section{CATE and Heterogeneous Treatment Effects}
+\subsection{Distribution of CATEs}
+\subsection{CATE by Recency}
+\subsection{CATE by Channel}
+\subsection{CATE by Purchase History}
+\subsection{Causal Forest Feature Importance}
+
+\section{Discussion}
+
+\section{Limitations}
+
+\section{Conclusion}
+
+% -----------------------
+% Appendix
+% -----------------------
+\appendix
+\section{Code for Synthetic Data Generation}
+\section{ATE/CATE Estimation Code}
+\section{Additional Tables}
+\section{Additional Figures}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
