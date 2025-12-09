@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765273566.48723 "/Users/alex/stats295/Final Report File/main.tex" "main.pdf" "main" 1765273567.06275 0
+["pdflatex"] 1765275094.72803 "/Users/alex/stats295/Final Report File/main.tex" "main.pdf" "main" 1765275095.20115 0
   "/Users/alex/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/Users/alex/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/Users/alex/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -84,11 +84,11 @@
   "/Users/alex/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754041006 92931 d19cb102ba290602a121c5d3a7e963b5 ""
   "/Users/alex/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1765271355 2251689 7478c8edbfd409369d72968aceb431c2 ""
   "/Users/alex/Library/TinyTeX/texmf.cnf" 1747729332.44851 708 85fd07691b6294ba94c59dbc62380410 ""
-  "/Users/alex/stats295/Final Report File/main.tex" 1765273565.63124 2404 9abd3c6c482b4298347668fe3cc4f610 ""
-  "main.aux" 1765273567.00346 4470 9a458f21f13115f387fdbb9ef14e2b5e "pdflatex"
-  "main.out" 1765273567.00485 5424 85f52717e80c1240a824f87c5de5c057 "pdflatex"
-  "main.tex" 1765273565.63124 2404 9abd3c6c482b4298347668fe3cc4f610 ""
-  "main.toc" 1765273567.00541 2873 5fe66ce48fb3d768c254d4027e8d3947 "pdflatex"
+  "/Users/alex/stats295/Final Report File/main.tex" 1765275094.02141 3482 88c0928ce31fa1e70bc8fe8e3dad3001 ""
+  "main.aux" 1765275095.14494 4470 7205594f7aa79c7c1af4348fed593c94 "pdflatex"
+  "main.out" 1765275095.14625 5424 85f52717e80c1240a824f87c5de5c057 "pdflatex"
+  "main.tex" 1765275094.02141 3482 88c0928ce31fa1e70bc8fe8e3dad3001 ""
+  "main.toc" 1765275095.14684 2873 504f51e5cdbbdece0af6106938504385 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
