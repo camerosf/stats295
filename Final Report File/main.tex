@@ -68,7 +68,32 @@ Department of Statistics, University of California, Irvine}
 % ============================================
 \section{ATE Results on Hillstrom Dataset}
 \subsection{Difference-in-Means}
-\subsection{OLS / IPW Estimates}
+\subsection{Direct Method Estimates}
+\begin{table}[H]
+\centering
+\caption{Average Treatment Effects (ATE) with 95\% Confidence Intervals}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Outcome} &
+\textbf{Mens vs Control} &
+\textbf{Womens vs Control} &
+\textbf{Mens vs Womens} \\
+\midrule
+\textbf{Spend} &
+0.5813 [0.42, 0.76] &
+0.3894 [0.28, 0.51] &
+0.1919 [0.07, 0.32] \\
+\textbf{Visit} &
+0.0714 [0.06, 0.09] &
+0.0446 [0.03, 0.06] &
+0.0267 [0.01, 0.04] \\
+\textbf{Conversion} &
+0.0056 [0.004, 0.007] &
+0.0030 [0.002, 0.004] &
+0.0026 [0.001, 0.004] \\
+\bottomrule
+\end{tabular}
+\end{table}
 \subsection{DR-Learner Results}
 \subsection{Causal Forest Results}
 
