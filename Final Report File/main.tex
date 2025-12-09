@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 % -----------------------
 % Packages
@@ -14,19 +14,27 @@
 \usepackage{natbib}
 
 \geometry{margin=1in}
+\setstretch{1.2}
+
+% Prevent LaTeX from stretching pages when content is empty
+\raggedbottom
 
 % -----------------------
 % Title Page
 % -----------------------
-\title{A Multi-Arm A/B Testing and Causal Evaluation of Marketing E-Mails with Synthetic Validation and Heterogeneous Treatment Effects}
-\author{Alexander Yu \quad Cameron Fong \quad Nathan Gin \\[6pt]
+\title{A Multi-Arm A/B Testing and Causal Evaluation of Marketing E-Mails\\
+with Synthetic Validation and Heterogeneous Treatment Effects}
+\author{Alexander Yu, Cameron Fong, Nathan Gin \\
 Department of Statistics, University of California, Irvine}
 \date{\today}
 
 \begin{document}
 
 \maketitle
-
+\newpage
+% -----------------------
+% Table of Contents
+% -----------------------
 \tableofcontents
 \newpage
 
@@ -37,8 +45,10 @@ Department of Statistics, University of California, Irvine}
 \section{Introduction}
 
 \section{Background and Motivation}
+% (Write content here)
 
 \section{Data Description}
+% (Write content here)
 
 \section{Exploratory Data Analysis}
 \subsection{Treatment Assignment}
@@ -64,7 +74,7 @@ Department of Statistics, University of California, Irvine}
 \subsection{Interpretation}
 
 % ============================================
-% REAL HILLSTROM ANALYSIS
+% REAL DATA ANALYSIS
 % ============================================
 \section{ATE Results on Hillstrom Dataset}
 \subsection{Difference-in-Means}
@@ -73,7 +83,6 @@ Department of Statistics, University of California, Irvine}
 \subsection{Causal Forest Results}
 
 \section{CATE and Heterogeneous Treatment Effects}
-\subsection{Distribution of CATEs}
 \subsection{CATE by Recency}
 \subsection{CATE by Channel}
 \subsection{CATE by Purchase History}
@@ -85,19 +94,7 @@ Department of Statistics, University of California, Irvine}
 
 \section{Conclusion}
 
-% -----------------------
-% Appendix
-% -----------------------
-\appendix
-\section{Code for Synthetic Data Generation}
-
-\section{ATE/CATE Estimation Code}
-
 \section{Additional Tables}
-
 \section{Additional Figures}
-
-\bibliographystyle{apalike}
-\bibliography{references}
 
 \end{document}
