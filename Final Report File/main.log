@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 03:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 03:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,7 +406,7 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F15B770B19431A003C5C18DED6469C03;5424.
+(rerunfilecheck)             Checksum: C9474A4F8DA8F15D7981E8F0E286D479;5441.
  ) 
 Here is how much of TeX's memory you used:
  12077 strings out of 469754
@@ -417,7 +417,7 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  75i,8n,79p,1150b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (4 pages, 99894 bytes).
+Output written on main.pdf (4 pages, 99903 bytes).
 PDF statistics:
  239 PDF objects out of 1000 (max. 8388607)
  220 compressed objects within 3 object streams
