@@ -2,7 +2,6 @@
 \contentsline {section}{\numberline {2}Data Description}{3}{section.2}%
 \contentsline {section}{\numberline {3}Descriptive Statistics}{4}{section.3}%
 \contentsline {section}{\numberline {4}Causal Identification}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Why A/B Tests Identify the ATE}{5}{subsection.4.1}%
 \contentsline {section}{\numberline {5}ATE Results on Email Dataset}{5}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Difference-in-Means}{5}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Direct Method Estimates}{6}{subsection.5.2}%
