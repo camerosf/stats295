@@ -3,17 +3,6 @@ import numpy as np
 
 df = pd.read_csv("EmailAnalytics.csv")
 
-# Verify outcome columns are numeric
-for col in ["visit", "conversion", "spend"]:
-    df[col] = pd.to_numeric(df[col], errors="coerce")
-
-# Diagnostic: show unique segment values and counts to detect encoding issues
-if 'segment' in df.columns:
-    print("\nSegment value counts:")
-    print(df['segment'].value_counts(dropna=False))
-else:
-    print("Warning: 'segment' column not found in data")
-
 # Map common segment label variants to standardized treatment names.
 def map_segment_to_treatment(s):
     if pd.isna(s):
