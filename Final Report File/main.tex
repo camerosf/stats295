@@ -43,59 +43,309 @@ Department of Statistics, University of California, Irvine}
 
 \section{Introduction}
 
-\section{Background and Motivation}
-% (Write content here)
 
 \section{Data Description}
-% (Write content here)
+The data used in this study contain observations from 64,000 customers enrolled in a randomized marketing experiment designed to evaluate the effectiveness of targeted e-mail campaigns on short-term purchasing behavior. Each customer was randomly assigned to one of three intervention groups: Mens E-Mail (promotional content featuring men’s merchandise), Womens E-Mail (promotional content featuring women’s merchandise), or a No E-Mail control condition. Following treatment assignment, customer behavior was tracked for a two week post campaign period, during which three key customer outcome measures were recorded. Below we describe the variables included in the dataset.
 
-\section{Exploratory Data Analysis}
-\subsection{Treatment Assignment}
-\subsection{Outcome Summaries}
-\subsection{Covariate Balance}
-\subsection{Correlation Structure}
+\subsection*{Post-Treatment Outcomes (Measured Over Two Weeks)}
+\begin{itemize}
+    \item \textbf{Visit:} Indicator variable equal to 1 if the customer visited the website at least once, 0 otherwise.
+    \item \textbf{Conversion:} Binary indicator equal to 1 if the customer made any purchase during the follow-up period.
+    \item \textbf{Spend:} Total dollar amount spent during the two-week window (zero for non-purchasers).
+\end{itemize}
+
+\subsection*{Baseline Customer Attributes (Collected Prior to Randomization)}
+\begin{itemize}
+    \item \textbf{Recency:} Number of months since the customer’s most recent purchase.
+    \item \textbf{History:} Dollar amount spent in the prior twelve months.
+    \item \textbf{History\_Segment:} Categorical variable grouping annual spending into predefined bins (e.g., \$0--\$100, \$100--\$200, \$200--\$350, etc.).
+    \item \textbf{Mens:} Indicator equal to 1 if the customer purchased men's merchandise in the past year.
+    \item \textbf{Womens:} Indicator equal to 1 if the customer purchased women's merchandise in the past year.
+    \item \textbf{Zip\_Code:} Geographic classification of the customer's location (Urban, Suburban, or Rural).
+    \item \textbf{Newbie:} Binary indicator equal to 1 for customers who joined within the last 12 months.
+    \item \textbf{Channel:} Purchasing channel(s) used by the customer in the previous year (e.g., Web, Phone, Multichannel).
+\end{itemize}
+
+\subsection*{Treatment Assignment Variable}
+\begin{itemize}
+    \item \textbf{Segment:} Randomly assigned intervention condition: Mens E-Mail, Womens E-Mail, or No E-Mail. This variable defines the treatment exposure whose causal effect is evaluated.
+\end{itemize}
+
+The e-mail experiment was implemented using true randomization, with each of the 64,000 customers assigned independently and with equal probability(1/3) to the Mens E-Mail, Womens E-Mail, or No E-Mail group. The randomization was not conditioned on any customer characteristics, so a customer may receive an E-mail completly unrelated such as opposite sex. In addition, the dataset is complete as  all customers have fully observed treatment assignments, outcome measures, and baseline covariates. No meaningful missingness was detected in key variables such as Recency, History, product-category indicators, or demographic fields. Since each customer contributes exactly one observation and no post-randomization attrition occurred, the dataset reflects the full randomized sample, ensuring that no selection bias or data loss threatens the validity of the experiment.
+
+
+\section{Descriptive Statistics}
+
+The Table 1 below summarizes customer characteristics across the three treatment groups. The Control, Mens E-Mail, and Womens E-Mail arms are nearly identical in size, each roughly one-third of the sample which reflects the intended randomization. The continuous covariates show strong balance as well with Recency averages from 5.7–5.8 months and prior-year purchase History display similar means and variability across groups. The categorical characteristics are similarly well balanced as a pproximately 55 percent of customers in each group previously purchased Mens merchandise, and a comparable proportion purchased Womens merchandise. History Segment distributions differ by at most a few tenths of a percentage point across arms, and geographic composition (Urban, Suburban, Rural), Newbie status, and purchasing Channel are nearly identical.
+
+
+\begin{table}[H]
+\centering
+\caption{Baseline Characteristics by Treatment Group}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Characteristic} 
+& \textbf{Control} 
+& \textbf{Mens E-Mail} 
+& \textbf{Womens E-Mail} \\
+\toprule
+
+\textbf{Number of Customers} 
+& 21306 (33.3\%) 
+& 21307 (33.3\%) 
+& 21387 (33.4\%) \\
+
+\textbf{Recency (mean (SD))} 
+& 5.7 (3.5) 
+& 5.8 (3.5) 
+& 5.8 (3.5) \\
+
+\textbf{History (mean (SD))} 
+& 240.9 (252.7) 
+& 242.8 (260.4) 
+& 242.5 (255.3) \\
+
+\textbf{History Segment} & & & \\
+
+\quad 1) \$0 -- \$100 
+& 7612 (35.7\%) 
+& 7724 (36.3\%) 
+& 7634 (35.7\%) \\
+
+\quad 2) \$100 -- \$200 
+& 4836 (22.7\%) 
+& 4691 (22.0\%) 
+& 4727 (22.1\%) \\
+
+\quad 3) \$200 -- \$350 
+& 4044 (19.0\%) 
+& 4090 (19.2\%) 
+& 4155 (19.4\%) \\
+
+\quad 4) \$350 -- \$500 
+& 2124 (10.0\%) 
+& 2097 (9.8\%) 
+& 2188 (10.2\%) \\
+
+\quad 5) \$500 -- \$750 
+& 1652 (7.8\%) 
+& 1597 (7.5\%) 
+& 1662 (7.8\%) \\
+
+\quad 6) \$750 -- \$1{,}000 
+& 622 (2.9\%) 
+& 644 (3.0\%) 
+& 593 (2.8\%) \\
+
+\quad 7) \$1{,}000+ 
+& 416 (2.0\%) 
+& 464 (2.2\%) 
+& 428 (2.0\%) \\
+
+\textbf{Mens (\%)} & & & \\
+
+\quad 0 
+& 9519 (44.7\%) 
+& 9568 (44.9\%) 
+& 9647 (45.1\%) \\
+
+\quad 1 
+& 11787 (55.3\%) 
+& 11739 (55.1\%) 
+& 11740 (54.9\%) \\
+
+\textbf{Womens (\%)} & & & \\
+
+\quad 0 
+& 9638 (45.2\%) 
+& 9558 (44.9\%) 
+& 9622 (45.0\%) \\
+
+\quad 1 
+& 11668 (54.8\%) 
+& 11749 (55.1\%) 
+& 11765 (55.0\%) \\
+
+\textbf{Zip Code} & & & \\
+
+\quad Rural 
+& 3139 (14.7\%) 
+& 3243 (15.2\%) 
+& 3181 (14.9\%) \\
+
+\quad Suburban 
+& 9625 (45.2\%) 
+& 9501 (44.6\%) 
+& 9650 (45.1\%) \\
+
+\quad Urban 
+& 8542 (40.1\%) 
+& 8563 (40.2\%) 
+& 8556 (40.0\%) \\
+
+\textbf{Newbie (\%)} & & & \\
+
+\quad 0 
+& 10611 (49.8\%) 
+& 10621 (49.8\%) 
+& 10624 (49.7\%) \\
+
+\quad 1 
+& 10695 (50.2\%) 
+& 10686 (50.2\%) 
+& 10763 (50.3\%) \\
+
+\textbf{Channel} & & & \\
+
+\quad Multichannel 
+& 2606 (12.2\%) 
+& 2577 (12.1\%) 
+& 2579 (12.1\%) \\
+
+\quad Phone 
+& 9327 (43.8\%) 
+& 9240 (43.4\%) 
+& 9454 (44.2\%) \\
+
+\quad Web 
+& 9373 (44.0\%) 
+& 9490 (44.5\%) 
+& 9354 (43.7\%) \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \section{Causal Identification}
-\subsection{Unconfoundedness}
-\subsection{Overlap}
-\subsection{SUTVA}
-\subsection{Consistency}
+
+Before estimating treatment effects we need to evaluate whether the required causal identification assumptions are satisfied in our dataset so we can proceed with the requisite statistical approaches. These causal identification in this potential outcomes framework requires three assumptions: SUTVA, ignorability, and positivity.
+
+SUTVA requires that the observed outcome satisfies the following
+\[
+Y_i = \sum_{a \in \mathcal{A}} Y_i^\ast(a)\,\mathbb{I}(A_i = a),
+\]
+and that customers do not interfere with one another and each treatment corresponds to a unique, well-defined intervention. In our setting, each customer independently receives and responds to an e-mail, and there is no mechanism by which one customer's treatment affects another's behavior. Therfore, SUTVA is highly plausible.
+
+Ignorability requires
+\[
+\{Y_i^\ast(a) : a \in \mathcal{A}\} \;\perp\!\!\!\perp\; A_i \mid X_i,
+\]
+meaning treatment assignment depends only on observed covariates \(X\) and not on unmeasured factors. Table 1 provides strong support for ignorability as across all baseline covariates including recency, purchase history, gender, zip-code category, newbie status, and marketing channel, the three arms show nearly identical means and proportions. The number of customers per treatment is identical (approximately 33.3\% each) and continuous covariates are similar. History-segment and gender distributions also overlap almost perfectly. This balance implys that the process generating treatment assignment is independent of baseline covariates and a good chance that ignorability is well-supported.
+
+Positivity requires that every covariate profile has a non-zero probability of receiving each treatment:
+\[
+0 < P(A = a \mid X) < 1, \quad \forall a \in \mathcal{A},
+\]
+ensuring that no subgroup is structurally excluded from any treatment. Since
+ the distributions of all covariates are nearly identical across treatment groups, there is no evidence of exclusion (e.g., men restricted from Women's E-Mail). Each category—gender, region, history segment, channel—appears in all arms at similar frequencies so once again this balance across all covariates is good evidencce that positivity is met.
+
+
+Overall, we can kind of see how the empirical covariate balance in Table 1 strongly supports all three identification assumptions from causal inference and clinical trial theory. The e-mail a/b test style experiment behaves similarly as a well-executed multi-arm randomized controlled trial which is the gold standard.
+
+
+
 \subsection{Why A/B Tests Identify the ATE}
 
 
 % ============================================
 % REAL DATA ANALYSIS
 % ============================================
-\section{ATE Results on Hillstrom Dataset}
+\section{ATE Results on Email Dataset}
 \subsection{Difference-in-Means}
-\subsection{Direct Method Estimates}
+
+Since the e-mail campaign was implemented using true random assignment, the analysis closely mirrors what would be done in a classical randomized controlled trial. In an RCT, the key property is that treatment groups are comparable on average, both in observed characteristics and in unobserved factors that might influence outcomes. This balance means that simple differences in mean outcomes between groups provide unbiased estimates of causal effects without requiring covariate adjustment. In ourcase we are solving the following:
+
+\begin{align*}
+\widehat{\text{ATE}}_{\text{Mens, Control}}(Y)
+    &= \bar{Y}_{\text{Mens}} - \bar{Y}_{\text{Control}}, \\
+\widehat{\text{ATE}}_{\text{Womens, Control}}(Y)
+    &= \bar{Y}_{\text{Womens}} - \bar{Y}_{\text{Control}}, \\
+\widehat{\text{ATE}}_{\text{Mens, Womens}}(Y)
+    &= \bar{Y}_{\text{Mens}} - \bar{Y}_{\text{Womens}}.
+\end{align*}
+
+Using this framework, we find that the Mens e-mail produces the largest improvements across all three customer-behavior outcomes. Relative to the Control group, customers receiving the Mens e-mail spend 77 cents more on average, and they are also more likely to visit the website and convert, with increases of 7.6 percent in visit probability and 0.68 percent in conversion probability.The Womens e-mail also shows average spending rises by about 42 cents, and both visit and conversion probabilities increase, though less sharply than for the Mens treatment. The direct comparison between the two active treatments  customers exposed to the Mens e-mail exhibit higher spending, higher likelihood of visiting, and higher likelihood of converting than those who received the Womens e-mail. 
+
+ These findings establish great insight and a benchmark against which the precision and robustness of more advanced causal estimators can be evaluated in subsequent analyses.
+
 \begin{table}[H]
 \centering
-\caption{Average Treatment Effects (ATE) with 95\% Confidence Intervals}
+\caption{ATE (Difference in Means) Estimates for All Outcomes}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Outcome} &
-\textbf{Mens vs Control} &
-\textbf{Womens vs Control} &
-\textbf{Mens vs Womens} \\
+\textbf{Treatment Comparison} & \textbf{Spend} & \textbf{Visit} & \textbf{Conversion} \\
 \midrule
-\textbf{Spend} &
-0.5813 [0.42, 0.76] &
-0.3894 [0.28, 0.51] &
-0.1919 [0.07, 0.32] \\
-\textbf{Visit} &
-0.0714 [0.06, 0.09] &
-0.0446 [0.03, 0.06] &
-0.0267 [0.01, 0.04] \\
-\textbf{Conversion} &
-0.0056 [0.004, 0.007] &
-0.0030 [0.002, 0.004] &
-0.0026 [0.001, 0.004] \\
+Mens vs Control   & 0.769827 & 0.076590 & 0.006805 \\
+Womens vs Control & 0.424412 & 0.045233 & 0.003111 \\
+Mens vs Women     & 0.345415 & 0.031356 & 0.003694 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Direct Method Estimates}
+
+Although randomization guarantees that difference-in-means yields unbiased estimates, the Direct Method offers additional advantages by producing more efficient, covariate-adjusted treatment-effect estimates and enabling individual-level counterfactual predictions. To complement our baseline analysis, we therefore apply the Direct Method (also known as the Outcome Regression approach) to estimate the causal effects of the Mens and Womens e-mail campaigns on spending, visit behavior, and conversion. The main idea here is to fit a predictive model for the outcome as a function of customer characteristics and treatment assignment, use this model to estimate each customer’s potential outcome under all possible treatments, and then average these individual-level counterfactual differences to obtain overall ATE estimates.
+
+
+\[
+\widehat{\mathrm{ATE}}_{DM}^{(M-C)}
+=
+\frac{1}{n}\sum_{i=1}^n 
+\left(
+\widehat{\mu}(X_i, \text{Mens})
+-
+\widehat{\mu}(X_i, \text{Control})
+\right),
+\]
+
+\[
+\widehat{\mathrm{ATE}}_{DM}^{(W-C)}
+=
+\frac{1}{n}\sum_{i=1}^n 
+\left(
+\widehat{\mu}(X_i, \text{Womens})
+-
+\widehat{\mu}(X_i, \text{Control})
+\right),
+\]
+
+\[
+\widehat{\mathrm{ATE}}_{DM}^{(M-W)}
+=
+\frac{1}{n}\sum_{i=1}^n 
+\left(
+\widehat{\mu}(X_i, \text{Mens})
+-
+\widehat{\mu}(X_i, \text{Womens})
+\right).
+\]
+
+In this case we will estimate ATEs using an S-Learner framework(similar to proccess seen in CausalDM), in which a single predictive model is trained to map customer features and treatment indicators to observed outcomes while using a Gradient Boosting Regressor. This model leverages customer-level covariates such as recency, purchase history, and others to produce stable outcome predictions.
+
+After the model is trained we construct counterfactual predictions for every customer under all three treatment assignments (Control, Mens E-Mail, Womens E-Mail). These counterfactuals represent how each customer would have behaved had they been assigned to any of the other treatment conditions. The Average Treatment Effects are then computed by averaging the predicted differences in outcomes across the entire population which are the following results.
+
+\begin{table}[H]
+\centering
+\caption{Direct Method ATE Estimates for All Outcomes}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Treatment Comparison} & \textbf{Spend} & \textbf{Visit} & \textbf{Conversion} \\
+\midrule
+Mens vs Control   & 0.6083 & 0.0712 & 0.00575 \\
+Women vs Control  & 0.3071 & 0.0411 & 0.00244 \\
+Mens vs Women     & 0.3012 & 0.0301 & 0.00331 \\
 \bottomrule
 \end{tabular}
 \end{table}
 \subsection{DR-Learner Results}
-\subsection{Causal Forest Results}
+
+Across all three outcomes we see that the Mens E-Mail campaign delivers the strongest effect. It increases expected spending by approximately 61 cents per customer and leads to noticeably higher visit and conversion rates relative to both the Control group and the Womens campaign. The Womens E-Mail campaign also produces positive effects, though consistently smaller in magnitude where it is roughly half that of the Mens campaign. The Mens and Womens comparison further confirms that the Mens campaign is more effective on average at driving customer engagement and purchasing behavior.
+
+The Direct Method results follow similar patterns to the simple difference-in-means estimates but provide a more stable and precise measure of the campaign effects. This motivates further exploration of treatment effect heterogeneity, which we address in the next section using CATE modeling.
+
 
 \section{CATE and Heterogeneous Treatment Effects}
 \subsection{CATE by Recency}

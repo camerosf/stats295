@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 03:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.9)  10 DEC 2025 03:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -400,27 +400,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [3]
 
-[4] (./main.aux)
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C9474A4F8DA8F15D7981E8F0E286D479;5441.
+(rerunfilecheck)             Checksum: 527AF371E791795DC05ABBA8FDE35E77;4012.
  ) 
 Here is how much of TeX's memory you used:
- 12077 strings out of 469754
- 187716 string characters out of 5480738
- 596993 words of memory out of 5000000
- 40278 multiletter control sequences out of 15000+600000
- 634688 words of font info for 71 fonts, out of 8000000 for 9000
+ 12076 strings out of 469754
+ 187738 string characters out of 5480738
+ 600993 words of memory out of 5000000
+ 40277 multiletter control sequences out of 15000+600000
+ 635023 words of font info for 72 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 75i,8n,79p,1150b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (4 pages, 99903 bytes).
+ 75i,12n,79p,1150b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/alex/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/alex/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (8 pages, 173394 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
