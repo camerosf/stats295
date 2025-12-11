@@ -339,7 +339,7 @@ Mens vs Women     & 0.3012 & 0.0301 & 0.00331 \\
 \end{tabular}
 \end{table}
 
-Across all three outcomes we see that the Mens E-Mail campaign delivers the strongest effect. It increases expected spending by approximately 61 cents per customer and leads to noticeably higher visit and conversion rates relative to both the Control group and the Womens campaign. The Womens E-Mail campaign also produces positive effects, though consistently smaller in magnitude where it is roughly half that of the Mens campaign. The Mens and Womens comparison further confirms that the Mens campaign is more effective on average at driving customer engagement and purchasing behavior.
+Across all three outcomes we see that the Mens Email campaign delivers the strongest effect. It increases expected spending by approximately 61 cents per customer and leads to noticeably higher visit and conversion rates relative to both the Control group and the Womens campaign. The Womens E-Mail campaign also produces positive effects, though consistently smaller in magnitude where it is roughly half that of the Mens campaign. The Mens and Womens comparison further confirms that the Mens campaign is more effective on average at driving customer engagement and purchasing behavior.
 
 The Direct Method results follow similar patterns to the simple difference-in-means estimates but provide a more stable and precise measure of the campaign effects. This motivates further exploration of treatment effect heterogeneity, which we address in the next section using CATE modeling.
 
@@ -347,7 +347,7 @@ The Direct Method results follow similar patterns to the simple difference-in-me
 
 \section{CATE and Heterogeneous Treatment Effects, just example layout for now}
 
-Treatment effect heterogeneity or HTE refers to the variation in causal effects across different subpopulations defined by baseline characteristics. Understanding HTE is crucial for tailoring marketing strategies to specific customer segments and optimizing resource allocation. In this section, we employ Causal Forests to estimate Conditional Average Treatment Effects (CATEs) for the Mens and Womens e-mail campaigns, allowing us to identify which customer features drive differential responses to the interventions.
+Treatment effect heterogeneity or HTE refers to the variation in causal effects across different subpopulations defined by baseline characteristics. Understanding HTE is crucial for tailoring marketing strategies to specific customer segments and optimizing resource allocation. In this section, we employ Causal Forests to estimate Conditional Average Treatment Effects (CATEs) for the Mens and Womens email campaigns, allowing us to identify which customer features drive differential responses to the interventions.
 
 Formally: 
 
@@ -401,7 +401,7 @@ Where X represents the covariates such as recency, purchase history, etc. If tre
 \caption{CATE Estimates by History Segment for Visit, Conversion, and Spending}
 \end{table}
 
-CATE analysis shows substantial treatment effect heterogeneity across purchase history segments. Men’s email performs strongly across all outcomes, particularly for customers with $350–$1000 in prior spending with an average 1.50 per person that received a mens email vs no email or average 1 dollar per person increase that received a mens email vs womens email. Women’s email exhibits mixed effects, with positive impacts for low and very high spenders but negative impacts for the $200–$500 segments. Direct comparison (Men vs Women) confirms that Men’s email consistently outperforms Women’s email for visit rate, conversion rate, and spending. These results imply that targeting strategies should prioritize Men’s email for mid- and upper-history customers while avoiding Women’s email in the $200–$500 range.
+CATE analysis shows substantial treatment effect heterogeneity across purchase history segments. Men’s email performs strongly across all outcomes, particularly for customers with \$350–\$1000 in prior spending with an average 1.50 per person that received a mens email vs no email or average 1 dollar per person increase that received a mens email vs womens email. Women’s email exhibits mixed effects, with positive impacts for low and very high spenders but negative impacts for the \$200–\$500 segments. Direct comparison (Men vs Women) confirms that Men’s email consistently outperforms Women’s email for visit rate, conversion rate, and spending. These results imply that targeting strategies should prioritize Men’s email for mid- and upper-history customers while avoiding Women’s email in the \$200–\$500 range.
 
 \subsection{CATE by Customer Type}
 
