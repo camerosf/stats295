@@ -346,9 +346,156 @@ The Direct Method results follow similar patterns to the simple difference-in-me
 \subsection{Maybe DR}
 
 \section{CATE and Heterogeneous Treatment Effects, just example layout for now}
-\subsection{CATE by Recency}
+
+Treatment effect heterogeneity or HTE refers to the variation in causal effects across different subpopulations defined by baseline characteristics. Understanding HTE is crucial for tailoring marketing strategies to specific customer segments and optimizing resource allocation. In this section, we employ Causal Forests to estimate Conditional Average Treatment Effects (CATEs) for the Mens and Womens e-mail campaigns, allowing us to identify which customer features drive differential responses to the interventions.
+
+Formally: 
+
+\[
+E[Y(1) - Y(0) \mid X] \text{ varies with } X
+\]
+
+
+Where X represents the covariates such as recency, purchase history, etc. If treatment effect changes dependeing on X, then there is heterogeneity. The next subsection will go over the CATE by various key variables.
+
+\subsection{CATE by History Segment}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{History Segment} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
+\midrule
+\multicolumn{4}{c}{\textbf{Men vs Control}} \\
+\midrule
+\$0--\$100      & 0.045739 & 0.003387 & 0.315019 \\
+\$100--\$200    & 0.051290 & 0.002892 & 0.443773 \\
+\$200--\$350    & 0.062001 & 0.006962 & 0.425057 \\
+\$350--\$500    & 0.074945 & 0.008891 & 1.500787 \\
+\$500--\$750    & 0.071382 & 0.005843 & 1.110247 \\
+\$750--\$1000   & 0.050762 & 0.013146 & 1.457034 \\
+\$1000+         & 0.072808 & 0.007819 & 0.940359 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Women vs Control}} \\
+\midrule
+\$0--\$100      & 0.009992 & 0.000718 & 0.309802 \\
+\$100--\$200    & 0.004250 & 0.001624 & 0.171597 \\
+\$200--\$350    & -0.007047 & -0.004721 & -0.580140 \\
+\$350--\$500    & -0.006826 & -0.003871 & -0.905179 \\
+\$500--\$750    & 0.005505 & 0.005003 & 0.357493 \\
+\$750--\$1000   & 0.004189 & 0.003930 & 0.102003 \\
+\$1000+         & 0.028177 & 0.005494 & 1.744044 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Men vs Women}} \\
+\midrule
+\$0--\$100      & 0.016437 & 0.000894 & -0.029689 \\
+\$100--\$200    & 0.028005 & 0.001710 & 0.335770 \\
+\$200--\$350    & 0.044326 & 0.009174 & 0.882761 \\
+\$350--\$500    & 0.057440 & 0.006311 & 1.027141 \\
+\$500--\$750    & 0.034880 & 0.002711 & 0.384652 \\
+\$750--\$1000   & 0.019401 & 0.006856 & 0.566638 \\
+\$1000+         & 0.025488 & -0.000020 & -0.749106 \\
+\bottomrule
+\end{tabular}
+\caption{CATE Estimates by History Segment for Visit, Conversion, and Spending}
+\end{table}
+
+CATE analysis shows substantial treatment effect heterogeneity across purchase history segments. Men’s email performs strongly across all outcomes, particularly for customers with $350–$1000 in prior spending with an average 1.50 per person that received a mens email vs no email or average 1 dollar per person increase that received a mens email vs womens email. Women’s email exhibits mixed effects, with positive impacts for low and very high spenders but negative impacts for the $200–$500 segments. Direct comparison (Men vs Women) confirms that Men’s email consistently outperforms Women’s email for visit rate, conversion rate, and spending. These results imply that targeting strategies should prioritize Men’s email for mid- and upper-history customers while avoiding Women’s email in the $200–$500 range.
+
+\subsection{CATE by Customer Type}
+
+\begin{table}[H]
+\centering
+\caption{CATE by Newbie Status}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Newbie} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Control}} \\
+\midrule
+No  & 0.057619 & 0.004945 & 0.518407 \\
+Yes & 0.053243 & 0.004929 & 0.646432 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Womens vs Control}} \\
+\midrule
+No  & 0.000352 & -0.001585 & -0.176583 \\
+Yes & 0.007458 & 0.001408  & 0.214128 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Womens}} \\
+\midrule
+No  & 0.034611 & 0.004421 & 0.399963 \\
+Yes & 0.025931 & 0.002755 & 0.269286 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across customer types, the men’s email consistently generates positive effects relative to the control group, with both newbies and non-newbies showing higher visit rates, conversion rates, and especially higher spending as compared to both the control and women's email. The spending lift is substantial for between men's email and control with about \$ 0.52 for non-newbies and \$ 0.65 for newbies compared to control, indicating that the Men’s email is effective across new and old customers. In contrast, the Women’s email shows much weaker performance. Among non-newbies, its effect is essentially neutral on visits and slightly negative on spending, whereas among newbies it produces a small positive impact on visits and a modest spending lift of about 0.21 compared to control but both still less effective compared to mens email. Directly comparing Men’s vs Women’s emails, the Men’s version clearly outperforms the Women’s version for both customer types: Men’s emails drive stronger increases in visit rate, conversion, and spending. Overall, these results indicate that the Men’s email is the more effective treatment across both newbies and non-newbies, while the Women’s email provides meaningful value only for newer customers.
+
+\subsection{CATE by Zip Code}
+
+\begin{table}[H]
+\centering
+\caption{CATE by Zip Code Type}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Zip Code Type} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Control}} \\
+\midrule
+Rural    & 0.055512 & 0.004312 & 0.595440 \\
+Suburban & 0.054358 & 0.005377 & 0.640372 \\
+Urban    & 0.056579 & 0.004676 & 0.513299 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Womens vs Control}} \\
+\midrule
+Rural    & 0.000521 & 0.000350  & 0.094205 \\
+Suburban & 0.005481 & -0.000678 & -0.130201 \\
+Urban    & 0.056579 & 0.000427  & 0.159911 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Womens}} \\
+\midrule
+Rural    & 0.030956 & 0.003347 & 0.391729 \\
+Suburban & 0.029166 & 0.004049 & 0.465542 \\
+Urban    & 0.031199 & 0.003153 & 0.165960 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Much like the previous variables, the men’s email consistently outperforms the control group across all zip code types (Rural, Suburban, Urban) with positive effects on visit rates, conversion rates, and spending. The spending lift is particularly notable in suburban areas where men’s email drives an average increase of about \$0.64 per person compared to control. In contrast, the women’s email shows mixed results: it has a small positive effect on visits in rural and urban areas but a negative effect in suburban areas, and its impact on spending is generally weak or negative across all zip code types. Direct comparisons between men’s and women’s emails further highlight the improved effect of the men’s version, which consistently yields higher visit rates, conversion rates, and spending increases regardless of geographic location. Overall, these findings suggest that the men’s email is the more effective treatment across all zip code.
+
 \subsection{CATE by Channel}
-\subsection{CATE by Purchase History}
+
+\begin{table}[H]
+\centering
+\caption{CATE by Channel}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Channel} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Control}} \\
+\midrule
+Multichannel & 0.066020 & 0.006723 & 0.920752 \\
+Phone        & 0.054383 & 0.004506 & 0.523518 \\
+Web          & 0.053537 & 0.004873 & 0.548496 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Womens vs Control}} \\
+\midrule
+Multichannel & 0.001797 & 0.000523  & -0.056822 \\
+Phone        & 0.004806 & -0.000475 & 0.027197  \\
+Web          & 0.003627 & 0.000142  & 0.033195  \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Womens}} \\
+\midrule
+Multichannel & 0.040143 & 0.004830 & 0.504127 \\
+Phone        & 0.030702 & 0.003526 & 0.301339 \\
+Web          & 0.027096 & 0.003301 & 0.320560 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Finally looking into channels, the men’s email consistently outperforms the control group across all channels (Multichannel, Phone, Web) with positive effects on visit rates, conversion rates, and spending. The spending lift is particularly notable in the Multichannel segment where men’s email drives an average increase of about \$0.92 per person compared to control . In contrast, the women’s email shows weak or negative results across all channels, with minimal impact on visits and spending. Direct comparisons between men’s and women’s emails further highlight the superior effect of the men’s version, which consistently yields higher visit rates, conversion rates, and spending increases regardless of channel. Overall, these findings suggest that the men’s email is the more effective treatment across all purchasing channels with having the largest difference in visit, conversion, and spending compared to the previous 3 variables of zip code, history segment, and customer type (exception being the high tier past spenders).
+
 \subsection{Causal Forest Feature Importance}
 
 % ============================================
@@ -356,7 +503,6 @@ The Direct Method results follow similar patterns to the simple difference-in-me
 % ============================================
 \section{Synthetic Dataset Validation}
 \subsection{Synthetic Data Generation}
-To complement our analysis of the real e-commerce A/B test, we generated a synthetic dataset in which the full data-generating process is explicitly controlled. In the real dataset, treatment assignment and potential outcomes are not fully observable, so we cannot assess whether our estimated ATEs and CATEs are accurate or biased. Our synthetic dataset allows us to specify exactly how treatment depends on customer covariates, including the confounders such as recency, purchase history, gender-aligned preferences, and newbie status. It also allows us to insert known causal effects into the outcome model, ensuring that the true treatment effects are known by construction. With this structure, we can evaluate how well different causal inference methods recover the correct treatment effects by directly computing their estimation bias and variance. This provides a controlled validation scenario that mirrors the patterns observed in our real data while giving us the ability to  assess method performance, which is not possible when analyzing the actual experiment alone.
 \subsection{True Treatment Effects}
 \subsection{ATE Estimator Comparison}
 \subsection{Bias and Variance Evaluation}
