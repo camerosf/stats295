@@ -550,6 +550,11 @@ Finally looking into channels, the men’s email consistently outperforms the co
 
 \section{Discussion}
 
+Across all outcomes, the Mens e-mail produces the largest improvements on average, increasing visits, conversions, and spending relative to both control and the Womens e-mail. The Direct Method and DR estimates follow the same pattern as difference-in-means, suggesting the main conclusions are stable across estimators. \textbf{[ADD HOW DR COMPARES TO DM ]}
+
+The CATE analysis shows substantial heterogeneity. Mens e-mails perform strongly across most segments, with especially large spending gains among moderate to high prior spenders and multichannel customers, while Womens e-mails are weaker and more variable, including midrange history segments where effects are near zero or negative. These results suggest that although the experiment supports clean causal identification, the most actionable insight is that targeting strategies informed by heterogeneity could outperform uniform deployment. \textbf{[SUMMARIZE SYNTHETIC EVALUATION RESULTS]}
+
+
 \section{Limitations}
 Although the e-mail campaign was implemented as a purely randomized, multi-arm experiment which  preserves the validity of a classical RCT and A/B test, the design may be less effective from a practical marketing perspective. The Mens and Womens e-mails were randomly assigned without regard to prior purchasing behavior or customer preferences, meaning some customers received messages weakly aligned with their interests. While this strengthens causal identification, it can weaken observed treatment effects and reduce the contrast between experimental arms. 
 
@@ -558,6 +563,18 @@ As statisticans we like the fully randomized design but from a business and deci
 Another potential limitation is that even thoughthe dataset includes several key observed covariates such as recency, purchase history, and acquisition channel, unobserved covariates remain a limitation when interpreting differential responses across treatments. Latent factors such as individual preferences, baseline interest in product categories, prior exposure to marketing content, or underlying engagement propensity are not observed but may systematically affect how customers respond to different e-mail messages. While randomization ensures unbiased estimation of effects relative to the control group, it does not eliminate the influence of these unobserved characteristics on treatment effect heterogeneity.
 
 \section{Conclusion}
+
+In this project, we applied causal inference and causal machine learning methods to evaluate the effects of two marketing e-mail campaigns using a large randomized multi-arm experiment. Across multiple estimators, the Mens e-mail consistently outperforms the Womens e-mail and the no e-mail control in terms of website visits, conversions, and short term spending, providing clear evidence that Mens style messaging is the more effective campaign on average.
+
+By combining difference-in-means estimators with outcome regression, doubly robust methods, and causal forests, we moved beyond basic A/B tests and documented meaningful heterogeneity in treatment effects across customer segments. The Mens e-mail delivers especially strong benefits for mid and high spending customers and for multichannel users, while the Womens e-mail shows weaker and more variable performance, including segments where its effects are negligible or negative relative to control. While ideal for internal validity, these findings suggest that uniform random assignment is unlikely to be optimal for real-world marketing deployment.
+
+The synthetic data study further clarifies the statistical properties of the estimators used in our empirical analysis, highlighting trade offs between simplicity, efficiency, and robustness. In settings where treatment assignment is less cleanly randomized or where models may be misspecified, our results highlight the value of doubly robust approaches for reliable causal estimation.
+
+Overall, this study illustrates how integrating experimental design, causal inference, and modern machine learning provides a powerful toolkit for evaluating and optimizing digital marketing strategies. Future work could extend our analysis by incorporating longer term outcomes, exploring additional treatments, and developing adaptive or policy learning approaches that use estimated heterogeneous treatment effects to design specific rules for campaign deployment.
+
+
+
+
 
 \section{Additional Tables}
 \section{Additional Figures}
