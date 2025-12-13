@@ -42,6 +42,14 @@ Department of Statistics, University of California, Irvine}
 % -----------------------
 
 \section{Introduction}
+Randomized experiments are considered to be the standard for causal inference because treatment assignment is controlled and comparable groups are formed by design. In this project, we analyze a large-scale multi-arm marketing experiment involving 64,000 customers, where each customer was randomly assigned with equal probability to receive a Mens promotional e-mail, a Womens promotional e-mail, or no e-mail (control). Customer engagement and purchasing behavior were then observed over a two-week post-treatment period, including whether the customer visited the website, whether they made a purchase (conversion), and their total spending. 
+
+A standard A/B test analysis of such an experiment would focus on simple differences in mean outcomes across arms. Under randomization, these differences provide unbiased estimates of average treatment effects (ATEs) and answer the question of which e-mail performs better on average. However, average treatment effects along are often not enough. The impact of a campaign can vary substantially across customers with different prior spending levels, geographic locations, and ways of purchasing. A campaign that is beneficial on average may deliver weak or even negative effects for specific subgroups, leading to missed opportunities or inefficient use of marketing resources. 
+
+Motivated by these considerations, we adopt a causal inference and causal machine learning framework to evaluate both average and heterogeneous treatment effects of the two e-mail campaigns. After describing the dataset and verifying key identification assumptions (SUTVA, ignorability, and positivity), we first estimate ATEs using difference in means as a benchmark. We then incorporate model based estimators, including a Direct Method (outcome regression) implemented via an S-learner with gradient boosting and a doubly robust (DR) estimator that combines outcome and treatment models to improve efficiency and robustness.
+
+To move beyond average effects, we use causal forests to estimate conditional average treatment effects (CATEs) and explore how treatment impacts vary across customer segments defined by purchase history, newbie status, zip code type, and purchasing channel. Finally, to better understand the statistical performance of the estimators used in our empirical analysis, we construct a synthetic dataset in which the true treatment effects are known. This synthetic validation allows us to compare the bias, variance, and mean squared error of difference in means, Direct Method, and doubly robust estimators under controlled conditions. Together, these analyses provide both a rigorous causal evaluation of the marketing campaigns and actionable guidance for targeted decision making.
+
 
 
 \section{Data Description}
