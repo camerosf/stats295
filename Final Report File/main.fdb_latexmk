@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765604921.76289 "c:/Users/aznga/Desktop/Stats 295 Clinical Trial/stats295/Final Report File/main.tex" "main.pdf" "main" 1765604924.2308 0
+["pdflatex"] 1765605897.58011 "c:/Users/aznga/Desktop/Stats 295 Clinical Trial/stats295/Final Report File/main.tex" "main.pdf" "main" 1765605900.07603 0
   "C:/Users/aznga/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765586432 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/aznga/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0900.pk" 1765586437 10472 a418cff51321ca665db4c6d59fc207f1 ""
   "C:/Users/aznga/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1765586439 11548 28a89bdd1809764314c811480b216cbe ""
@@ -106,11 +106,11 @@
   "C:/Users/aznga/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1751104012 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "C:/Users/aznga/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1670403145 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "C:/Users/aznga/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/aznga/Desktop/Stats 295 Clinical Trial/stats295/Final Report File/main.tex" 1765604916 38204 755efbe6774f54b061ef1d3087042995 ""
-  "main.aux" 1765604923 4634 6cb908e0888b96b8c9a1fddfd313ed41 "pdflatex"
-  "main.out" 1765604923 3110 d291ba765d3ea75390b9d13859b167fd "pdflatex"
-  "main.tex" 1765604916 38204 755efbe6774f54b061ef1d3087042995 ""
-  "main.toc" 1765604923 1622 26c632f03175ff8aa27e7c65deffa0ab "pdflatex"
+  "c:/Users/aznga/Desktop/Stats 295 Clinical Trial/stats295/Final Report File/main.tex" 1765605894 36852 aee2f71e36f86474cbd45c04add80673 ""
+  "main.aux" 1765605899 4337 7648b98974d39de086a01656c0559fe5 "pdflatex"
+  "main.out" 1765605899 3110 d291ba765d3ea75390b9d13859b167fd "pdflatex"
+  "main.tex" 1765605894 36852 aee2f71e36f86474cbd45c04add80673 ""
+  "main.toc" 1765605899 1621 7b8f6f786c2498c0eb560447dcc50939 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

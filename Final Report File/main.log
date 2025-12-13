@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.9)  12 DEC 2025 21:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.9)  12 DEC 2025 22:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -402,7 +402,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] (main.aux)
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -411,17 +411,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D291BA765D3EA75390B9D13859B167FD;3110.
  ) 
 Here is how much of TeX's memory you used:
- 12061 strings out of 474486
- 189998 string characters out of 5743755
- 1945542 words of memory out of 5000000
- 34143 multiletter control sequences out of 15000+600000
+ 12058 strings out of 474486
+ 189955 string characters out of 5743755
+ 1942542 words of memory out of 5000000
+ 34142 multiletter control sequences out of 15000+600000
  568457 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,79p,1369b,515s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\aznga\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk> <C:\Users\aznga\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/aznga/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (15 pages, 245272 bytes).
+Output written on main.pdf (14 pages, 243716 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
