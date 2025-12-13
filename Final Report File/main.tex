@@ -266,7 +266,7 @@ Since the e-mail campaign was implemented using true random assignment, the anal
     &= \bar{Y}_{\text{Mens}} - \bar{Y}_{\text{Womens}}.
 \end{align*}
 
-Using this framework, we find that the Mens e-mail produces the largest improvements across all three customer-behavior outcomes. Relative to the Control group, customers receiving the Mens e-mail spend 77 cents more on average, and they are also more likely to visit the website and convert, with increases of 7.6 percent in visit probability and 0.68 percent in conversion probability.The Womens e-mail also shows average spending rises by about 42 cents, and both visit and conversion probabilities increase, though less sharply than for the Mens treatment. The direct comparison between the two active treatments  customers exposed to the Mens e-mail exhibit higher spending, higher likelihood of visiting, and higher likelihood of converting than those who received the Womens e-mail. 
+Using this framework, we find that the Mens e-mail produces the largest improvements across all three customer-behavior outcomes. In the table below we see that relative to the Control group, customers receiving the Mens e-mail spend 77 cents more on average, and they are also more likely to visit the website and convert, with increases of 7.6 percent in visit probability and 0.68 percent in conversion probability. The Womens e-mail also shows average spending rises by about 42 cents, and both visit and conversion probabilities increase, though less sharply than for the Mens treatment. The direct comparison between the two active treatments  customers exposed to the Mens e-mail exhibit higher spending, higher likelihood of visiting, and higher likelihood of converting than those who received the Womens e-mail. 
 
  These findings establish great insight and a benchmark against which the precision and robustness of more advanced causal estimators can be evaluated in subsequent analyses.
 
@@ -288,7 +288,7 @@ Mens vs Women     & 0.345415 & 0.031356 & 0.003694 \\
 
 \subsection{Direct Method Estimates}
 
-Although randomization guarantees that difference-in-means yields unbiased estimates, the Direct Method offers additional advantages by producing more efficient, covariate-adjusted treatment-effect estimates and enabling individual-level counterfactual predictions. To complement our baseline analysis, we therefore apply the Direct Method (also known as the Outcome Regression approach) to estimate the causal effects of the Mens and Womens e-mail campaigns on spending, visit behavior, and conversion. The main idea here is to fit a predictive model for the outcome as a function of customer characteristics and treatment assignment, use this model to estimate each customer’s potential outcome under all possible treatments, and then average these individual-level counterfactual differences to obtain overall ATE estimates.
+Although randomization guarantees that difference-in-means yields unbiased estimates, the Direct Method offers additional advantages by producing more efficient, covariate-adjusted treatment-effect estimates and enabling individual-level counterfactual predictions. To complement our baseline analysis, we therefore apply the Direct Method (also known as the Outcome Regression approach) to estimate the causal effects of the Mens and Womens e-mail campaigns on spending, visit behavior, and conversion. The main idea here is to fit a predictive model for the outcome as a function of customer characteristics and treatment assignment, use this model to estimate each customer's potential outcome under all possible treatments, and then average these individual-level counterfactual differences to obtain overall ATE estimates.
 
 
 \[
@@ -344,11 +344,11 @@ Mens vs Women     & 0.3012 & 0.0301 & 0.00331 \\
 
 Across all three outcomes we see that the Mens Email campaign delivers the strongest effect. It increases expected spending by approximately 61 cents per customer and leads to noticeably higher visit and conversion rates relative to both the Control group and the Womens campaign. The Womens E-Mail campaign also produces positive effects, though consistently smaller in magnitude where it is roughly half that of the Mens campaign. The Mens and Womens comparison further confirms that the Mens campaign is more effective on average at driving customer engagement and purchasing behavior.
 
-The Direct Method results follow similar patterns to the simple difference-in-means estimates but provide a more stable and precise measure of the campaign effects. This motivates further exploration of treatment effect heterogeneity, which we address in the next section using CATE modeling.
+The Direct Method results follow similar patterns to the simple difference-in-means estimates but provide a more stable and precise measure of the campaign effects. 
 
 \subsection{Double Robust Estimator}
 
-In addition to the Direct Method, we estimate treatment effects using the double robust (DR) estimator to see whether it can further improve efficiency and provide a robustness check on our results. Since the e-mail experiment was conducted as a fully randomized 1:1:1 trial, unbiased estimation does not require adjustment for treatment assignment. However, the DR approach extends the Direct Method by incorporating information from both the outcome model and the treatment assignment mechanism. In this setting, the DR estimator may reduce variability and assess the stability of our estimates rather than to correct for bias. This motivates the DR estimating equation presented below
+In addition to the Direct Method, we estimate treatment effects using the double robust (DR) estimator to see whether it can further improve efficiency and provide a robustness check on our results. Since the e-mail experiment was conducted as a fully randomized trial, unbiased estimation does not require adjustment for treatment assignment. However, the DR approach extends the Direct Method by incorporating information from both the outcome model and the treatment assignment mechanism. In this setting, the DR estimator may reduce variability and assess the stability of our estimates rather than to correct for bias. This motivates the DR estimating equation presented below
 
 \begin{align*}
 \widehat{\text{ATE}}^{(M-C)}_{\text{DR}}
@@ -378,7 +378,7 @@ In addition to the Direct Method, we estimate treatment effects using the double
 
 \begin{table}[H]
 \centering
-\caption{Doubly Robust ATE Estimates for All Outcomes}
+\caption{Double Robust ATE Estimates for All Outcomes}
 \label{tab:dr_results}
 \begin{tabular}{lccc}
 \toprule
@@ -392,7 +392,7 @@ Mens vs Womens    & 0.3873 & 0.0323 & 0.0040 \\
 \end{table}
 
 
-Using a doubly robust estimator, we see that both mens and womens email campaigns increase visit rates, conversion, and spending relative to control or no email. Men's email shows the largest effects increasing visit probaiblity by 7.68 percent, conversion by 0.71 percent, and spending by 0.81 dollars on average. Women's email also improves all 3 outcomes although to a lesser extent with a 4.43 percent increase in visit probability, 0.34 percent increase in conversion, and 0.45 dollar increase in spending. Direct comparison between the two active treatments confirms that mens email outperforms womens email across all outcomes. The doubly robust estimates are consistent with both the difference-in-means and direct method results, reinforcing the conclusion that the mens email is the most effective campaign overall.
+Using a double robust estimator, we see that both mens and womens email campaigns increase visit rates, conversion, and spending relative to control or no email. Men's email shows the largest effects increasing visit probaiblity by 7.68 percent, conversion by 0.71 percent, and spending by 0.81 dollars on average. Women's email also improves all 3 outcomes although to a lesser extent with a 4.43 percent increase in visit probability, 0.34 percent increase in conversion, and 0.45 dollar increase in spending. Direct comparison between the two active treatments confirms that mens email outperforms womens email across all outcomes. The double robust estimates are consistent with both the difference-in-means and direct method results, reinforcing the conclusion that the mens email is the most effective campaign overall.
 
 \section{CATE and Heterogeneous Treatment Effects}
 
@@ -405,7 +405,7 @@ E[Y(1) - Y(0) \mid X] \text{ varies with } X
 \]
 
 
-Where X represents the covariates such as recency, purchase history, etc. If treatment effect changes dependeing on X, then there is heterogeneity. The variables of interest chosen to investigate are history segment to see if past purchasing habits affect the response to the email, customer type or whether a person is new to the site in question if those more familiar with the site are more likely to purchase products, zip code if certain areas (notably urban) have a higher chance to both visit and purchase items, and channel whether certain devices make it more convenient to click email ads. The next subsection will go over the CATE by various key variables.
+Where X represents the covariates such as recency, purchase history, etc. If treatment effect changes dependeing on X, then there is heterogeneity. The variables of interest chosen to investigate are history segment to see if past purchasing habits affect the response to the email, customer type or whether a person is new to the site in question if those more familiar with the site are more likely to purchase products, zip code if certain areas (notably urban) have a higher chance to both visit and purchase items, and channel whether certain devices make it more convenient to click email ads. The next subsection will go over the CATE by various key variables. This motivates further exploration of treatment effect heterogeneity, which we address in the next section using CATE modeling.
 
 
 \subsection{CATE by Customer Type}
@@ -547,8 +547,6 @@ Web          & 0.027096 & 0.003301 & 0.320560 \\
 
 Finally looking into channels, the men’s email consistently outperforms the control group across all channels (Multichannel, Phone, Web) with positive effects on visit rates, conversion rates, and spending. The spending lift is particularly notable in the Multichannel segment where men’s email drives an average increase of about \$0.92 per person compared to control . In contrast, the women’s email shows weak or negative results across all channels, with minimal impact on visits and spending. Direct comparisons between men’s and women’s emails further highlight the superior effect of the men’s version, which consistently yields higher visit rates, conversion rates, and spending increases regardless of channel. Overall, these findings suggest that the men’s email is the more effective treatment across all purchasing channels with having the largest difference in visit, conversion, and spending compared to the previous 3 variables of zip code, history segment, and customer type (exception being the high tier past spenders).
 
-\subsection{Causal Forest Feature Importance}
-Causal forests serve as powerful nonparametric learners for estimating nuisance components of the DR estimator, improving efficiency relative to simple parametric models when treatment effects or outcome relationships are heterogeneous.
 
 
 % ============================================
@@ -592,15 +590,8 @@ Mens vs Womens & 0.01812 & 0.00009 & 0.00001 \\
 \caption{Mean Squared Error (MSE) of ATE Estimates Across Methods and Outcomes}
 \label{tab:mse_all_methods}
 \end{table}
-The results show that Difference-in-Means exhibits the highest overall MSE, showing
-higher variance, particularly for the spend and visit outcomes. In contrast, the
-Direct Method achieves the lowest overall MSE, demonstrating clear efficiency gains
-from covariate adjustment even under randomized treatment assignment. The Double
-Robust estimator improves upon Difference-in-Means but does not outperform the Direct
-Method, as its robustness advantages are less relevant in a fully randomized setting.
-Overall, these results confirm that covariate-adjusted estimators, especially the
-Direct Method, provide more precise treatment effect estimates in this context,
-supporting their use in the main analysis.
+
+The results show that Difference-in-Means exhibits the highest overall MSE, showing higher variance, particularly for the spend and visit outcomes. In contrast, the Direct Method achieves the lowest overall MSE, demonstrating clear efficiency gains from covariate adjustment even under randomized treatment assignment. The Double Robust estimator improves upon Difference-in-Means but does not outperform the Direct Method, as its robustness advantages are less relevant in a fully randomized setting. Overall, these results confirm that covariate-adjusted estimators, especially the Direct Method, provide more precise treatment effect estimates in this context, supporting their use in the main analysis.
 
 
 \section{Discussion}
@@ -609,7 +600,7 @@ Across all outcomes, the Mens e-mail produces the largest improvements on averag
 
 The CATE analysis shows substantial heterogeneity. Mens e-mails perform strongly across most segments, with especially large spending gains among moderate to high prior spenders and multichannel customers, while Womens e-mails are weaker and more variable, including midrange history segments where effects are near zero or negative. These results suggest that although the experiment supports clean causal identification, the most actionable insight is that targeting strategies informed by heterogeneity could outperform uniform deployment.
 
-The synthetic validation further clarifies the statistical properties of our estimators. Overall, the synthetic experiments show that while all estimators recover the true treatment effects reasonably well, covariate adjusted approaches like the Direct Method and the doubly robust estimator achieve much lower mean squared error than the simple difference in means benchmark. This highlights meaningful efficiency gains even in a randomized experimental setting. 
+The synthetic validation further clarifies the statistical properties of our estimators. Overall, the synthetic experiments show that while all estimators recover the true treatment effects reasonably well, covariate adjusted approaches like the Direct Method and the double robust estimator achieve much lower mean squared error than the simple difference in means benchmark. This highlights meaningful efficiency gains even in a randomized experimental setting. 
 
 \section{Limitations}
 Although the e-mail campaign was implemented as a purely randomized, multi-arm experiment which  preserves the validity of a classical RCT and A/B test, the design may be less effective from a practical marketing perspective. The Mens and Womens e-mails were randomly assigned without regard to prior purchasing behavior or customer preferences, meaning some customers received messages weakly aligned with their interests. While this strengthens causal identification, it can weaken observed treatment effects and reduce the contrast between experimental arms. 
