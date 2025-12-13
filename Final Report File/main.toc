@@ -13,13 +13,8 @@
 \contentsline {subsection}{\numberline {6.4}CATE by Channel}{12}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Causal Forest Feature Importance}{13}{subsection.6.5}%
 \contentsline {section}{\numberline {7}Synthetic Dataset Validation}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Synthetic Data Generation}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}True Treatment Effects}{13}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}ATE Estimator Comparison}{13}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Bias and Variance Evaluation}{13}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Interpretation}{13}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Discussion}{13}{section.8}%
-\contentsline {section}{\numberline {9}Limitations}{13}{section.9}%
+\contentsline {section}{\numberline {8}Discussion}{14}{section.8}%
+\contentsline {section}{\numberline {9}Limitations}{14}{section.9}%
 \contentsline {section}{\numberline {10}Conclusion}{14}{section.10}%
-\contentsline {section}{\numberline {11}Additional Tables}{14}{section.11}%
-\contentsline {section}{\numberline {12}Additional Figures}{14}{section.12}%
+\contentsline {section}{\numberline {11}Additional Tables}{15}{section.11}%
+\contentsline {section}{\numberline {12}Additional Figures}{15}{section.12}%

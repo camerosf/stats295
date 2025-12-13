@@ -589,11 +589,52 @@ Finally looking into channels, the men’s email consistently outperforms the co
 % SYNTHETIC GOES BEFORE REAL ANALYSIS
 % ============================================
 \section{Synthetic Dataset Validation}
-\subsection{Synthetic Data Generation}
-\subsection{True Treatment Effects}
-\subsection{ATE Estimator Comparison}
-\subsection{Bias and Variance Evaluation}
-\subsection{Interpretation}
+To validate our analysis of the real e-commerce A/B test, we constructed a synthetic
+dataset. This enables a direct comparison of causal estimators that is not possible
+with the real data alone. We evaluate all of our ATE estimators, Difference-in-Means
+(DiM), the Direct Method (DM), and the Double Robust (DR) estimator using Mean Squared
+Error (MSE), which captures both bias and variance. The table below reports MSE values
+across all treatment comparisons and outcomes, along with an overall MSE for each
+method.
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\hline
+\textbf{Treatment Comparison} & \textbf{Spend} & \textbf{Visit} & \textbf{Conversion}
+\\
+\hline
+\multicolumn{4}{l}{\textbf{Difference-in-Means (DiM)}} \\
+Mens vs Control & 0.0760 & 0.0787 & 0.00044 \\
+Womens vs Control & 0.0095 & 0.0736 & 0.00031 \\
+Mens vs Womens & 0.0319 & 0.0001 & 0.00001 \\
+\textbf{Overall MSE} & \multicolumn{3}{c}{\textbf{0.0300}} \\
+\hline
+\multicolumn{4}{l}{\textbf{Direct Method (DM)}} \\
+Mens vs Control & 0.00126 & 0.06209 & 0.00005 \\
+Womens vs Control & 0.03791 & 0.05642 & 0.00009 \\
+Mens vs Womens & 0.02534 & 0.00014 & 0.00001 \\
+\textbf{Overall MSE} & \multicolumn{3}{c}{\textbf{0.0204}} \\
+\hline
+\multicolumn{4}{l}{\textbf{Double Robust (DR)}} \\
+Mens vs Control & 0.03323 & 0.09036 & 0.00043 \\
+Womens vs Control & 0.00017 & 0.08335 & 0.00030 \\
+Mens vs Womens & 0.01812 & 0.00009 & 0.00001 \\
+\textbf{Overall MSE} & \multicolumn{3}{c}{\textbf{0.0251}} \\
+\hline
+\end{tabular}
+\caption{Mean Squared Error (MSE) of ATE Estimates Across Methods and Outcomes}
+\label{tab:mse_all_methods}
+\end{table}
+The results show that Difference-in-Means exhibits the highest overall MSE, showing
+higher variance, particularly for the spend and visit outcomes. In contrast, the
+Direct Method achieves the lowest overall MSE, demonstrating clear efficiency gains
+from covariate adjustment even under randomized treatment assignment. The Double
+Robust estimator improves upon Difference-in-Means but does not outperform the Direct
+Method, as its robustness advantages are less relevant in a fully randomized setting.
+Overall, these results confirm that covariate-adjusted estimators, especially the
+Direct Method, provide more precise treatment effect estimates in this context,
+supporting their use in the main analysis.
 
 
 \section{Discussion}
