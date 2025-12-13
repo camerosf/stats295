@@ -405,7 +405,38 @@ E[Y(1) - Y(0) \mid X] \text{ varies with } X
 \]
 
 
-Where X represents the covariates such as recency, purchase history, etc. If treatment effect changes dependeing on X, then there is heterogeneity. The next subsection will go over the CATE by various key variables.
+Where X represents the covariates such as recency, purchase history, etc. If treatment effect changes dependeing on X, then there is heterogeneity. The variables of interest chosen to investigate are history segment to see if past purchasing habits affect the response to the email, customer type or whether a person is new to the site in question if those more familiar with the site are more likely to purchase products, zip code if certain areas (notably urban) have a higher chance to both visit and purchase items, and channel whether certain devices make it more convenient to click email ads. The next subsection will go over the CATE by various key variables.
+
+
+\subsection{CATE by Customer Type}
+
+\begin{table}[H]
+\centering
+\caption{CATE by Newbie Status}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Newbie} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Control}} \\
+\midrule
+No  & 0.057619 & 0.004945 & 0.518407 \\
+Yes & 0.053243 & 0.004929 & 0.646432 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Womens vs Control}} \\
+\midrule
+No  & 0.000352 & -0.001585 & -0.176583 \\
+Yes & 0.007458 & 0.001408  & 0.214128 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Mens vs Womens}} \\
+\midrule
+No  & 0.034611 & 0.004421 & 0.399963 \\
+Yes & 0.025931 & 0.002755 & 0.269286 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across customer types, the men’s email consistently generates positive effects relative to the control group, with both newbies and non-newbies showing higher visit rates, conversion rates, and especially higher spending as compared to both the control and women's email. The spending lift is substantial for between men's email and control with about \$ 0.52 for non-newbies and \$ 0.65 for newbies compared to control, indicating that the Men’s email is effective across new and old customers. In contrast, the Women’s email shows much weaker performance. Among non-newbies, its effect is essentially neutral on visits and slightly negative on spending, whereas among newbies it produces a small positive impact on visits and a modest spending lift of about 0.21 compared to control but both still less effective compared to mens email. Directly comparing Men’s vs Women’s emails, the Men’s version clearly outperforms the Women’s version for both customer types: Men’s emails drive stronger increases in visit rate, conversion, and spending. Overall, these results indicate that the Men’s email is the more effective treatment across both newbies and non-newbies, while the Women’s email provides meaningful value only for newer customers.
+
 
 \subsection{CATE by History Segment}
 
@@ -451,35 +482,6 @@ Where X represents the covariates such as recency, purchase history, etc. If tre
 \end{table}
 
 CATE analysis shows substantial treatment effect heterogeneity across purchase history segments. Men’s email performs strongly across all outcomes, particularly for customers with \$350–\$1000 in prior spending with an average 1.50 per person that received a mens email vs no email or average 1 dollar per person increase that received a mens email vs womens email. Women’s email exhibits mixed effects, with positive impacts for low and very high spenders but negative impacts for the \$200–\$500 segments. Direct comparison (Men vs Women) confirms that Men’s email consistently outperforms Women’s email for visit rate, conversion rate, and spending. These results imply that targeting strategies should prioritize Men’s email for mid- and upper-history customers while avoiding Women’s email in the \$200–\$500 range.
-
-\subsection{CATE by Customer Type}
-
-\begin{table}[H]
-\centering
-\caption{CATE by Newbie Status}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Newbie} & \textbf{Visit} & \textbf{Conversion} & \textbf{Spending} \\
-\midrule
-\multicolumn{4}{c}{\textbf{Mens vs Control}} \\
-\midrule
-No  & 0.057619 & 0.004945 & 0.518407 \\
-Yes & 0.053243 & 0.004929 & 0.646432 \\
-\midrule
-\multicolumn{4}{c}{\textbf{Womens vs Control}} \\
-\midrule
-No  & 0.000352 & -0.001585 & -0.176583 \\
-Yes & 0.007458 & 0.001408  & 0.214128 \\
-\midrule
-\multicolumn{4}{c}{\textbf{Mens vs Womens}} \\
-\midrule
-No  & 0.034611 & 0.004421 & 0.399963 \\
-Yes & 0.025931 & 0.002755 & 0.269286 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Across customer types, the men’s email consistently generates positive effects relative to the control group, with both newbies and non-newbies showing higher visit rates, conversion rates, and especially higher spending as compared to both the control and women's email. The spending lift is substantial for between men's email and control with about \$ 0.52 for non-newbies and \$ 0.65 for newbies compared to control, indicating that the Men’s email is effective across new and old customers. In contrast, the Women’s email shows much weaker performance. Among non-newbies, its effect is essentially neutral on visits and slightly negative on spending, whereas among newbies it produces a small positive impact on visits and a modest spending lift of about 0.21 compared to control but both still less effective compared to mens email. Directly comparing Men’s vs Women’s emails, the Men’s version clearly outperforms the Women’s version for both customer types: Men’s emails drive stronger increases in visit rate, conversion, and spending. Overall, these results indicate that the Men’s email is the more effective treatment across both newbies and non-newbies, while the Women’s email provides meaningful value only for newer customers.
 
 \subsection{CATE by Zip Code}
 
