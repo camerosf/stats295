@@ -381,10 +381,63 @@ In addition to the Direct Method, we estimate treatment effects using the double
 \Bigg].
 \end{align*}
 
+\begin{table}[H]
+\centering
+\caption{Doubly Robust Estimates of E-Mail Treatment Effects}
+\label{tab:dr_results}
+\begin{tabular}{llcccc}
+\hline
+Comparison & Outcome & ATE & SE & 95\% CI Low & 95\% CI High \\
+\hline
+Mens vs Control 
+& Visit      & 0.0768 & 0.0018 & 0.0732 & 0.0803 \\
+& Conversion & 0.0071 & 0.0005 & 0.0061 & 0.0081 \\
+& Spend      & 0.8148 & 0.0774 & 0.6630 & 0.9666 \\
+\hline
+Womens vs Control 
+& Visit      & 0.0443 & 0.0017 & 0.0409 & 0.0477 \\
+& Conversion & 0.0034 & 0.0004 & 0.0026 & 0.0043 \\
+& Spend      & 0.4538 & 0.0711 & 0.3144 & 0.5932 \\
+\hline
+Mens vs Womens 
+& Visit      & 0.0323 & 0.0019 & 0.0285 & 0.0361 \\
+& Conversion & 0.0040 & 0.0005 & 0.0030 & 0.0051 \\
+& Spend      & 0.3873 & 0.0845 & 0.2216 & 0.5529 \\
+\hline
+\end{tabular}
+\end{table}
 
+Using a doubly robust estimator, we see that both mens and womens email campaigns increase visit rates, conversion, and spending relative to control or no email. Men's email shows the largest effects increasing visit probaiblity by 7.68 percent, conversion by 0.71 percent, and spending by 0.81 dollars on average. Women's email also improves all 3 outcomes although to a lesser extent with a 4.43 percent increase in visit probability, 0.34 percent increase in conversion, and 0.45 dollar increase in spending. Direct comparison between the two active treatments confirms that mens email outperforms womens email across all outcomes. The doubly robust estimates are consistent with both the difference-in-means and direct method results, reinforcing the conclusion that the mens email is the most effective campaign overall.
 
+\begin{table}[H]
+\centering
+\caption{Doubly Robust MSE Table of E-Mail Treatment Effects}
+\label{tab:dr_mse_results}
+\begin{tabular}{llcccc}
+\hline
+Comparison & Outcome & ps mse & mu1 mse & mu0 mse \\
+\hline
+Mens vs Control 
+& Visit      & 0.0001 &  0.034645 & 0.021705\\
+& Conversion & 0.0001 &  0.002704 & 0.001333\\
+& Spend      & 0.0001 &  72.786932 & 39.319359\\
+\hline
+Womens vs Control 
+& Visit      & 0.0001 &  0.030031 & 0.021705\\
+& Conversion & 0.0001 &  0.002018 & 0.001333\\
+& Spend      & 0.0001 &  65.142120 & 39.319359\\
+\hline
+Mens vs Womens 
+& Visit      & 0.0001 &  0.034645 & 0.030031\\
+& Conversion & 0.0001 &  0.002704 & 0.002018\\
+& Spend      & 0.0001 &  72.786932 & 65.142120\\
+\hline
+\end{tabular}
+\end{table}
 
-\section{CATE and Heterogeneous Treatment Effects, just example layout for now}
+The mse analysis shown in table 6 also provides diagnostic measures for propensity score and outcome regression models. The propersity score mean squared error (PS MSE) is small across all treatment comparisons and outcomes, indicating a fully randomized design of the email experiment. The outcome regression MSEs differ substantially across outcomes reflecting heterogeneity in the outcome variability rather than model mispecification and does not affect validity of the DR results. Spending notably has a much larger MSE consistent with the heavy tailed nature of spending behavior as a majority do not purchase items which will be further explored in the CATE analysis while visit and conversion have small MSEs showing stable predictions across all users. Overall, these diagnostics support the use of DR estimator as an efficiency enhancing approach in this setting rather than bias correction.
+
+\section{CATE and Heterogeneous Treatment Effects}
 
 Treatment effect heterogeneity or HTE refers to the variation in causal effects across different subpopulations defined by baseline characteristics. Understanding HTE is crucial for tailoring marketing strategies to specific customer segments and optimizing resource allocation. In this section, we employ Causal Forests to estimate Conditional Average Treatment Effects (CATEs) for the Mens and Womens email campaigns, allowing us to identify which customer features drive differential responses to the interventions.
 
