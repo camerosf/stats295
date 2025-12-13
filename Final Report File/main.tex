@@ -415,7 +415,7 @@ Using a doubly robust estimator, we see that both mens and womens email campaign
 \label{tab:dr_mse_results}
 \begin{tabular}{llcccc}
 \hline
-Comparison & Outcome & ps mse & mu1 mse & mu0 mse \\
+Comparison & Outcome & ps mse & $\mu_1$ mse & $\mu_0$ mse \\
 \hline
 Mens vs Control 
 & Visit      & 0.0001 &  0.034645 & 0.021705\\
@@ -435,7 +435,7 @@ Mens vs Womens
 \end{tabular}
 \end{table}
 
-The mse analysis shown in table 6 also provides diagnostic measures for propensity score and outcome regression models. The propersity score mean squared error (PS MSE) is small across all treatment comparisons and outcomes, indicating a fully randomized design of the email experiment. The outcome regression MSEs differ substantially across outcomes reflecting heterogeneity in the outcome variability rather than model mispecification and does not affect validity of the DR results. Spending notably has a much larger MSE consistent with the heavy tailed nature of spending behavior as a majority do not purchase items which will be further explored in the CATE analysis while visit and conversion have small MSEs showing stable predictions across all users. Overall, these diagnostics support the use of DR estimator as an efficiency enhancing approach in this setting rather than bias correction.
+The mse analysis shown in table 6 also provides diagnostic measures for propensity score and outcome regression models. The propersity score mean squared error (PS MSE) is small across all treatment comparisons and outcomes, indicating a fully randomized design of the email experiment. The outcome regression MSEs (mu0 and mu1 mse representing noise in outcomes among control and treated subjects) differ substantially across outcomes reflecting heterogeneity in the outcome variability rather than model mispecification and does not affect validity of the DR results. Spending notably have larger MSEs consistent with the heavy tailed nature of spending behavior as a majority do not purchase items while visit and conversion have small MSEs showing stable predictions across all users. Overall, these diagnostics support the use of DR estimator as an efficiency enhancing approach in this setting rather than bias correction.
 
 \section{CATE and Heterogeneous Treatment Effects}
 

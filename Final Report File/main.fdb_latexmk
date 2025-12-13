@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765596453.19109 "c:/Users/Cameron Fong/Downloads/Stats295_FinalProject/stats295/Final Report File/main.tex" "main.pdf" "main" 1765596453.97433 0
+["pdflatex"] 1765597067.4462 "c:/Users/Cameron Fong/Downloads/Stats295_FinalProject/stats295/Final Report File/main.tex" "main.pdf" "main" 1765597068.09797 0
   "C:/Users/Cameron Fong/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765412135 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Cameron Fong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0900.pk" 1765412137 10472 196e9d9e8c08df2e444101bd4a16ecc8 ""
   "C:/Users/Cameron Fong/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1765412139 11548 1247cd6bbdfb2963e39c05a009bb2b88 ""
@@ -101,11 +101,11 @@
   "C:/Users/Cameron Fong/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1751104012 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "C:/Users/Cameron Fong/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1670403145 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "C:/Users/Cameron Fong/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/Cameron Fong/Downloads/Stats295_FinalProject/stats295/Final Report File/main.tex" 1765596452 38366 23c5ef219c3123af7798c4695f107afb ""
-  "main.aux" 1765596453 4966 f14f6790577a5687631e90894d3fa69b "pdflatex"
-  "main.out" 1765596453 3992 82090e0812b4b177af85d4bd756b5230 "pdflatex"
-  "main.tex" 1765596452 38366 23c5ef219c3123af7798c4695f107afb ""
-  "main.toc" 1765596453 2070 35dd81dcda8f420a56b835111671d7cb "pdflatex"
+  "c:/Users/Cameron Fong/Downloads/Stats295_FinalProject/stats295/Final Report File/main.tex" 1765597066 38401 54167f2b17a6253abfe3fe324467aed0 ""
+  "main.aux" 1765597067 4966 f14f6790577a5687631e90894d3fa69b "pdflatex"
+  "main.out" 1765597067 3992 82090e0812b4b177af85d4bd756b5230 "pdflatex"
+  "main.tex" 1765597066 38401 54167f2b17a6253abfe3fe324467aed0 ""
+  "main.toc" 1765597067 2070 35dd81dcda8f420a56b835111671d7cb "pdflatex"
   (generated)
   "main.aux"
   "main.log"
